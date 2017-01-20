@@ -1,8 +1,9 @@
 
+/*eslint-env node */
 'use strict';
 
 const CONVERSATION_SERVICE = 'conversation';
-const CONVERSATION_VERSION_DATE = '2016-07-11';
+const CONVERSATION_VERSION_DATE = '2016-09-20';
 const CONVERSATION_VERSION = 'v1';
 
 var watson = require( 'watson-developer-cloud' );  // watson sdk
@@ -30,7 +31,7 @@ function getConversationCredential() {
         version_date: CONVERSATION_VERSION_DATE,
         version: CONVERSATION_VERSION
     };
-};
+}
 
 var credential = getConversationCredential();
 
@@ -117,16 +118,15 @@ function updateMessage(payload, res, response) {
 
         if (!response.output.api) {
             return response;
-        } else {
-            request(response.output.api, function (error, apiResponse, body) {
-                if (!error && apiResponse.statusCode == 200) {
+        }
+        request(response.output.api, function (error, apiResponse, body) {
+                if (!error && apiResponse.statusCode === 200) {
                     response.output.specialContent = JSON.parse(body).specialContent;
                 } else{
                     console.log("Got error on calling api: " + response.output.api);
                 }
                 return res.json(response);
             });
-        }
     }
 }
 

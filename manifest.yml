@@ -3,6 +3,8 @@ applications:
   memory: 512M
   instances: 1
   domain: mybluemix.net
-  name: HelloConversation
-  host: helloconversation
+  name: thothservice
+  host: thothservice
   disk_quota: 1024M
+- env:
+  conversation_workspace_id: 04bdcacf-063e-48e5-9e44-bef39c8b24e5
