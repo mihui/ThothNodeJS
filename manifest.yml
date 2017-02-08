@@ -1,4 +1,5 @@
 applications:
-- name: thothservice
+- name: thoth
   env:
-    conversation_workspace_id: 04bdcacf-063e-48e5-9e44-bef39c8b24e5
+    CONVERSATION_WORKSPACE_ID: 04bdcacf-063e-48e5-9e44-bef39c8b24e5
+    CONVERSATION_TOKEN: 04bdcacf-063e-48e5-9e44-bef39c8b24e5
